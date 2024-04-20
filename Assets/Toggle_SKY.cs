@@ -7,7 +7,7 @@ public class Toggle_SKY : MonoBehaviour
     [SerializeField] Sprite morningSprite;
     [SerializeField] Sprite afternoonSprite;
     [SerializeField] Sprite nightSprite;
-    
+
     private SpriteRenderer spriteRenderer;
     private Sprite[] backgrounds;
     private int currentIndex = 0;
@@ -38,50 +38,50 @@ public class Toggle_SKY : MonoBehaviour
         }
     }
 
-    void SwitchBackground()
-    {
-        // Increment the index and wrap around if needed
-        currentIndex = (currentIndex + 1) % backgrounds.Length;
-
-        // Set the sprite to the next one in the array
-        spriteRenderer.sprite = backgrounds[currentIndex];
-    }
-
     // void SwitchBackground()
     // {
     //     // Increment the index and wrap around if needed
     //     currentIndex = (currentIndex + 1) % backgrounds.Length;
 
-    //     // Start transitioning to the next sprite
-    //     StartCoroutine(TransitionToNextSprite(backgrounds[currentIndex]));
+    //     // Set the sprite to the next one in the array
+    //     spriteRenderer.sprite = backgrounds[currentIndex];
     // }
 
-    //   IEnumerator TransitionToNextSprite(Sprite nextSprite)
-    // {
-    //     isTransitioning = true;
+    void SwitchBackground()
+    {
+        // Increment the index and wrap around if needed
+        currentIndex = (currentIndex + 1) % backgrounds.Length;
 
-    //     // Smoothly transition between the current sprite and the next sprite
-    //     while (spriteRenderer.color.a < 1)
-    //     {
-    //         // Increase the alpha value gradually
-    //         spriteRenderer.color += new Color(0, 0, 0, Time.deltaTime * transitionSpeed);
-    //         yield return null;
-    //     }
+        // Start transitioning to the next sprite
+        StartCoroutine(TransitionToNextSprite(backgrounds[currentIndex]));
+    }
 
-    //     // Set the new sprite
-    //     spriteRenderer.sprite = nextSprite;
+    IEnumerator TransitionToNextSprite(Sprite nextSprite)
+    {
+        isTransitioning = true;
 
-    //     // Reset alpha to 0 for the new sprite
-    //     spriteRenderer.color = new Color(1, 1, 1, 0);
+        // Smoothly transition between the current sprite and the next sprite
+        while (spriteRenderer.color.a < 1)
+        {
+            // Increase the alpha value gradually
+            spriteRenderer.color += new Color(0, 0, 0, Time.deltaTime * transitionSpeed);
+            yield return null;
+        }
 
-    //     // Smoothly fade in the new sprite
-    //     while (spriteRenderer.color.a < 1)
-    //     {
-    //         // Increase the alpha value gradually
-    //         spriteRenderer.color += new Color(0, 0, 0, Time.deltaTime * transitionSpeed);
-    //         yield return null;
-    //     }
+        // Set the new sprite
+        spriteRenderer.sprite = nextSprite;
 
-    //     isTransitioning = false;
-    // }
+        // Reset alpha to 0 for the new sprite
+        spriteRenderer.color = new Color(1, 1, 1, 0);
+
+        // Smoothly fade in the new sprite
+        while (spriteRenderer.color.a < 1)
+        {
+            // Increase the alpha value gradually
+            spriteRenderer.color += new Color(0, 0, 0, Time.deltaTime * transitionSpeed);
+            yield return null;
+        }
+
+        isTransitioning = false;
+    }
 }

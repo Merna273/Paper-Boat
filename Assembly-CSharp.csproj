@@ -66,6 +66,7 @@
     <Compile Include="Assets/Parallax.cs" />
     <Compile Include="Assets/CameraController.cs" />
     <Compile Include="Assets/Boat.cs" />
+    <Compile Include="Assets/WaveMovement.cs" />
     <Compile Include="Assets/Toggle_SKY.cs" />
   </ItemGroup>
   <ItemGroup>
