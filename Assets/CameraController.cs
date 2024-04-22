@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +6,7 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     [SerializeField]
-    GameObject car;
+    GameObject paper;
     [SerializeField]
     float offset;
     [SerializeField]
@@ -19,18 +20,13 @@ public class CameraController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
-        PlayerPosition = new Vector3(car.transform.position.x, transform.position.y, transform.position.z);
+        PlayerPosition = new Vector3(paper.transform.position.x, transform.position.y, transform.position.z);
 
-        if (car.transform.localScale.x > 0f)
-        {
-            PlayerPosition = new Vector3(PlayerPosition.x + offset, PlayerPosition.y, PlayerPosition.z);
-        }
-        else
-        {
-            PlayerPosition = new Vector3(PlayerPosition.x - offset, PlayerPosition.y, PlayerPosition.z);
-        }
+
+        PlayerPosition = new Vector3(PlayerPosition.x + offset, PlayerPosition.y, PlayerPosition.z);
+
 
         transform.position = Vector3.Lerp(transform.position, PlayerPosition, offsetSmoothing * Time.deltaTime);
     }

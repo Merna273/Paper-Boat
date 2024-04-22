@@ -41,3 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 3287391013
+    locked: 0
+  - name: obstacles
+    uniqueID: 235328013
+    locked: 0
+  - name: paperboat
+    uniqueID: 752199413
+    locked: 0
