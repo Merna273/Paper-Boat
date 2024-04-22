@@ -5,7 +5,7 @@ using UnityEngine;
 public class ObstacleSpawningSky : MonoBehaviour
 {
     public float spawnInterval = 2f; // Time between spawns
-    private ObjectPoolingSky pool; // Reference to the object pool
+    [SerializeField] private ObjectPoolingSky pool; // Reference to the object pool
     private float timer;
 
     public Transform camera; // Reference to the following camera
@@ -28,6 +28,15 @@ public class ObstacleSpawningSky : MonoBehaviour
         {
             // Get an object from the pool and set its position relative to the camera
             GameObject obstacle = pool.GetObjectFromPool();
+
+            ObstacleSky obsSky = obstacle.GetComponent<ObstacleSky>();
+            if (obsSky != null)
+            {
+                obsSky.Initialize(pool);
+            }
+
+    
+
             obstacle.transform.position = new Vector3(
                 camera.position.x + spawnDistance,
                 Random.Range(rangeDown, rangeUp),

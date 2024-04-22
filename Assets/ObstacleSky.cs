@@ -8,6 +8,12 @@ public class ObstacleSky : MonoBehaviour
     private ObjectPoolingSky pool; // Reference to the object pool
     //public Transform camera; // Reference to the following camera
 
+
+    public void Initialize(ObjectPoolingSky i_pool)
+    {
+        pool = i_pool;
+    }
+
     void Start()
     {
         // Get reference to the object pool
