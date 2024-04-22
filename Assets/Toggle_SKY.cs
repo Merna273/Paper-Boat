@@ -21,7 +21,7 @@ public class Toggle_SKY : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         // Store the sprites in an array
-        backgrounds = new Sprite[] { morningSprite, afternoonSprite, nightSprite };
+        backgrounds = new Sprite[] { morningSprite, afternoonSprite, nightSprite, afternoonSprite };
 
         // Set the initial sprite
         spriteRenderer.sprite = morningSprite;
