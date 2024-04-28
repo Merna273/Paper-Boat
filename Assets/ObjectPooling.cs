@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectPoolingSky : MonoBehaviour
+public class ObjectPooling : MonoBehaviour
 {
-    public List<GameObject> prefab; // The prefab to instantiate
-    public int poolSize = 10; // Number of objects to keep in the pool
+    [SerializeField] List<GameObject> prefab; // The prefab to instantiate
+    [SerializeField] int poolSize = 10; // Number of objects to keep in the pool
     private List<GameObject> pool; // List of pooled objects
-    public Transform camera; // Reference to the following camera
+    [SerializeField] Transform camera; // Reference to the following camera
 
     void Start()
     {

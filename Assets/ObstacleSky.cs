@@ -5,11 +5,11 @@ using UnityEngine;
 public class ObstacleSky : MonoBehaviour
 {
     public float speed = 5f; // Speed of the obstacle
-    private ObjectPoolingSky pool; // Reference to the object pool
-    //public Transform camera; // Reference to the following camera
+    private ObjectPooling pool; // Reference to the object pool
+    // public Transform camera; // Reference to the following camera
 
 
-    public void Initialize(ObjectPoolingSky i_pool)
+    public void Initialize(ObjectPooling i_pool)
     {
         pool = i_pool;
     }
@@ -17,7 +17,7 @@ public class ObstacleSky : MonoBehaviour
     void Start()
     {
         // Get reference to the object pool
-        pool = FindObjectOfType<ObjectPoolingSky>();
+        pool = FindObjectOfType<ObjectPooling>();
     }
 
     void Update()
@@ -26,7 +26,7 @@ public class ObstacleSky : MonoBehaviour
         transform.Translate(Vector3.left * speed * Time.deltaTime);
 
         // Check if the obstacle is off-screen (e.g., beyond a certain x-coordinate)
-        float off_camera = pool.camera.position.x - 100;    
+        float off_camera = Camera.main.transform.position.x - 100;   
         if (transform.position.x < off_camera) // Adjust the boundary as needed
         {
             // Return the object to the pool
