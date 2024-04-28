@@ -4,43 +4,48 @@ using UnityEngine;
 
 public class ObstacleSpawning : MonoBehaviour
 {
-    [SerializeField] float spawnInterval = 2f; // Time between spawns
     [SerializeField] ObjectPooling pool; // Reference to the object pool
-    private float timer;
+
+    private DayNight_timer dayNightTimer;
+    private int currentIndex = 0;
 
     [SerializeField] Transform camera; // Reference to the following camera
-    [SerializeField] float spawnDistance = 10f; // Distance from the camera
-
+    float MinSpawnDistance = 50f; // Distance from the camera
+    float MaxSpawnDistance = 100f; // Distance from the camera
     [SerializeField] float rangeUp;
     [SerializeField] float rangeDown;
 
     void Start()
     {
         // pool = FindObjectOfType<ObjectPooling>(); // Get reference to the object pool
-        timer = spawnInterval; // Initialize the timer
+        dayNightTimer = FindObjectOfType<DayNight_timer>();
+        currentIndex = dayNightTimer.GetCurrentTime();
     }
 
     void Update()
     {
-        timer -= Time.deltaTime;
-
-        if (timer <= 0)
+        int Index = dayNightTimer.GetCurrentTime();
+        if (currentIndex != Index)
         {
-            // Get an object from the pool and set its position relative to the camera
-            GameObject obstacle = pool.GetObjectFromPool();
-
-            // ObstacleSky obsSky = obstacle.GetComponent<ObstacleSky>();
-            // if (obsSky != null)
-            // {
-            //     obsSky.Initialize(pool);
-            // }
-            obstacle.transform.position = new Vector3(
-                camera.position.x + spawnDistance,
+            currentIndex = Index;
+            if (currentIndex == 0 || currentIndex == 3)
+            {
+                GameObject MorningObstacle = pool.GetObjectFromMorningPool();
+                MorningObstacle.transform.position = new Vector3(
+                camera.position.x + Random.Range(MinSpawnDistance, MaxSpawnDistance),
                 Random.Range(rangeDown, rangeUp),
                 0
             );
-
-            timer = spawnInterval;
+            }
+            else if (currentIndex == 1 || currentIndex == 2)
+            {
+                GameObject NightObstacle = pool.GetObjectFromNightPool();
+                NightObstacle.transform.position = new Vector3(
+                camera.position.x + Random.Range(MinSpawnDistance, MaxSpawnDistance),
+                Random.Range(rangeDown, rangeUp),
+                0
+            );
+            }
         }
     }
 }

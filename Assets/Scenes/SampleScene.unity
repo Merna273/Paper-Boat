@@ -167,11 +167,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 588cf55d5f0715847a6d8a7583c25763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab:
-  - {fileID: 2263834080543237983, guid: 5ea5548e14984e9439ee106640dc9a59, type: 3}
+  MorningPrefab:
   - {fileID: 6227234540589731426, guid: a2bd14eb457277a41a96ff5221124557, type: 3}
   - {fileID: 6786034942622988759, guid: 87d750c1700165a4699a912a90909c65, type: 3}
-  poolSize: 3
+  NightPrefab:
+  - {fileID: 2263834080543237983, guid: 5ea5548e14984e9439ee106640dc9a59, type: 3}
+  - {fileID: 6786034942622988759, guid: 87d750c1700165a4699a912a90909c65, type: 3}
   camera: {fileID: 519420032}
 --- !u!1 &423199221 stripped
 GameObject:
@@ -227,10 +228,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cf1af127471981478ac01061fdc9e5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnInterval: 3
   pool: {fileID: 260553321}
   camera: {fileID: 519420032}
-  spawnDistance: 100
   rangeUp: 15
   rangeDown: 5
 --- !u!1 &519420028
@@ -467,13 +466,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 588cf55d5f0715847a6d8a7583c25763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab:
+  MorningPrefab:
+  - {fileID: 2814147017077728808, guid: b83c09842d042814e928f78100df2755, type: 3}
   - {fileID: 716302070577027578, guid: 508b05c273b8a7945a3d56159e51a3bb, type: 3}
   - {fileID: 8602091846704664128, guid: 4acced83f01a95a49b4730d52cb5a839, type: 3}
-  - {fileID: 8215170227462554109, guid: 47efb1a94403b0548b1610eba4b4fda6, type: 3}
-  - {fileID: 2814147017077728808, guid: b83c09842d042814e928f78100df2755, type: 3}
+  NightPrefab:
   - {fileID: 6276322565285005704, guid: a73148a52a198bb48960ead0f7a31703, type: 3}
-  poolSize: 10
+  - {fileID: 8215170227462554109, guid: 47efb1a94403b0548b1610eba4b4fda6, type: 3}
+  - {fileID: 6524405265166217549, guid: 9ceb40ec034b1421488a9a402b924fdb, type: 3}
   camera: {fileID: 519420032}
 --- !u!1 &908881187
 GameObject:
@@ -519,10 +519,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cf1af127471981478ac01061fdc9e5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnInterval: 4
   pool: {fileID: 904045951}
   camera: {fileID: 519420032}
-  spawnDistance: 100
   rangeUp: -8
   rangeDown: -23
 --- !u!1 &1050355745 stripped

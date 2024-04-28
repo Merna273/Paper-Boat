@@ -33,7 +33,7 @@
 //         PlaneObject.SetActive(false);
 //         currentVehicle = BoatObject; // Start with the boat as the current vehicle
 //     }
-        
+
 //     void Update()
 //     {
 //         Moveobject();
@@ -111,6 +111,9 @@ public class Axis_Movement : MonoBehaviour
 {
     private InputManager inputManager;
 
+    private bool isUp = false;
+
+    private bool planeFell = false;
     [SerializeField] float minY = 0f;
     [SerializeField] float maxY = 10f;
 
@@ -138,9 +141,30 @@ public class Axis_Movement : MonoBehaviour
 
     void HandleVerticalAxis(float value)
     {
+        if (value > 0)
+        {
+            isUp = true;
+        }
+        else
+        {
+            isUp = false;
+        }
+
         Vector3 newPosition = transform.position + new Vector3(0, value, 0);
         newPosition.y = Mathf.Clamp(newPosition.y, minY, maxY);
         transform.position = newPosition;
+    }
+    public bool getIsUp()
+    {
+        return isUp;
+    }
+    public float getMinY()
+    {
+        return minY;
+    }
+    public void setPlaneFell(bool value)
+    {
+        planeFell = value;
     }
 
 }

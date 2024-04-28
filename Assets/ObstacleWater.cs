@@ -26,7 +26,7 @@ public class ObstacleWater : MonoBehaviour
         transform.Translate(Vector3.left * speed * Time.deltaTime);
 
         // Check if the obstacle is off-screen (e.g., beyond a certain x-coordinate)
-        float off_camera = Camera.main.transform.position.x - 100;   
+        float off_camera = Camera.main.transform.position.x - 100;
         if (transform.position.x < off_camera) // Adjust the boundary as needed
         {
             // Return the object to the pool

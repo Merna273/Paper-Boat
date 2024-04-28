@@ -4,16 +4,53 @@ using UnityEngine;
 
 public class Plane : MonoBehaviour
 {
+    public float gravity = 9.8f; // Gravity acceleration
+
+    private Axis_Movement axisMovement; // Reference to the Axis_Movement script
+    private bool arrowUpPressed = false; // Flag to check if the up arrow key is pressed
+
+    // Rigidbody2D component reference
+    private Rigidbody2D rb;
+
     // Start is called before the first frame update
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
+        rb.gravityScale = 0f;
+
+        axisMovement = FindObjectOfType<Axis_Movement>();
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (axisMovement.getIsUp())
+        {
+            arrowUpPressed = true;
+            rb.velocity = Vector2.zero;
+            rb.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
+        }
+        else
+        {
+            arrowUpPressed = false;
+        }
+        //if plane reached minY position then stop moving at the y-axis
+        if (transform.position.y <= axisMovement.getMinY())
+        {
+            //Debug.Log("Plane reached minY position");
+            axisMovement.setPlaneFell(true);
+
+        }
+
     }
 
+    void FixedUpdate()
+    {
+        if (!arrowUpPressed)
+        {
+            Vector2 gravityForce = new Vector2(0, -gravity * rb.mass);
+            rb.AddForce(gravityForce);
+        }
+    }
 }
