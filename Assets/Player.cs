@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
         transform.position += i_deltaPosition;
     }
 
-        void OnDestroy()
+    void OnDestroy()
     {
         // Unsubscribe from the events to avoid memory leaks
         if (inputManager != null)

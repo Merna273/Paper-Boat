@@ -7,8 +7,9 @@ public class Sun_Moon : MonoBehaviour
     private SpriteRenderer spriteRenderer; 
     [SerializeField] Sprite sun;
     [SerializeField] Sprite moon;
-    private float timer = 0f;
-    private float toggleInterval = 5f;
+    private DayNight_timer dayNightTimer;
+    private int currentIndex = 0;
+
     private float speed = 8f;
 
     public float targetY = -10f; // Y-coordinate to move down to
@@ -17,7 +18,7 @@ public class Sun_Moon : MonoBehaviour
     private bool movingUp = false; // Indicates whether the object is moving up
     private bool transition;
     private bool morning;
-    // Start is called before the first frame update
+
     void Start()
     {
         morning = true;
@@ -25,16 +26,17 @@ public class Sun_Moon : MonoBehaviour
         spriteRenderer.sprite = sun;
         originalY = transform.position.y;
         transition = true;
+        dayNightTimer = FindObjectOfType<DayNight_timer>();
+        currentIndex = dayNightTimer.GetCurrentTime();
     }
 
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
-        //print(timer);
-
-        if (timer >= toggleInterval)
+        int Index = dayNightTimer.GetCurrentTime();
+        if (currentIndex != Index)
         {
+            currentIndex = Index;
             if (transition)
             {
                 movingDown = true;
@@ -46,9 +48,12 @@ public class Sun_Moon : MonoBehaviour
                 movingUp = true;
             }
             transition = !transition;
+        }
+        movingSunMoon();
+    }
 
-            timer = 0f;
-        }  
+    void movingSunMoon()
+    {
         if (movingDown)
         {
             // Move down with the specified speed
@@ -73,9 +78,8 @@ public class Sun_Moon : MonoBehaviour
                 // Reset the state to move down again
                 movingUp = false;
             }
-        }      
+        } 
     }
-
     void switch_sun()
     {
         if (morning)

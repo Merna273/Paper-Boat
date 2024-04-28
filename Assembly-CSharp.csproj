@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\ObstacleWater.cs" />
+    <Compile Include="Assets\DayNight_timer.cs" />
     <Compile Include="Assets\Plane.cs" />
     <Compile Include="Assets\ObstacleSky.cs" />
     <Compile Include="Assets\Player.cs" />
