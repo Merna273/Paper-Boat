@@ -43,6 +43,11 @@ public class Plane : MonoBehaviour
 
         }
 
+        print("Plane Update");
+        print("axisMovement.getIsUp() = " + axisMovement.getIsUp());
+        print("axisMovement.getMinY() = " + axisMovement.getMinY());
+        print("transform.position.y = " + transform.position.y);
+        print("arrowUpPressed = " + arrowUpPressed);
     }
 
     void FixedUpdate()
@@ -52,5 +57,6 @@ public class Plane : MonoBehaviour
             Vector2 gravityForce = new Vector2(0, -gravity * rb.mass);
             rb.AddForce(gravityForce);
         }
+
     }
 }
