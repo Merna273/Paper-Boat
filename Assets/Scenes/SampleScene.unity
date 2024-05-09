@@ -322,8 +322,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pool: {fileID: 260553321}
   camera: {fileID: 519420032}
-  rangeUp: 15
-  rangeDown: 5
+  rangeUp: -5
+  rangeDown: -17
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,7 +412,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.3, y: -2, z: -10}
+  m_LocalPosition: {x: -5.3, y: -22.7, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -770,8 +770,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pool: {fileID: 904045951}
   camera: {fileID: 519420032}
-  rangeUp: -6
-  rangeDown: -20
+  rangeUp: -30
+  rangeDown: -41
 --- !u!1 &1021359409 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4606535464399046517, guid: 7b8c939ec27405e4188bf7917a5c7257, type: 3}
@@ -819,7 +819,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 250, y: -138.52098}
+  m_AnchoredPosition: {x: 317, y: -247}
   m_SizeDelta: {x: 94.502594, y: 18.042}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1360203023
@@ -908,7 +908,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2024680280857954439, guid: e8d61625bc588894fbd570f50c22f018, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10.6
+      value: -31.3
       objectReference: {fileID: 0}
     - target: {fileID: 2827476633062870521, guid: e8d61625bc588894fbd570f50c22f018, type: 3}
       propertyPath: m_Name
@@ -964,11 +964,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8480327092095467598, guid: e8d61625bc588894fbd570f50c22f018, type: 3}
       propertyPath: maxY
-      value: -5
+      value: -25
       objectReference: {fileID: 0}
     - target: {fileID: 8480327092095467598, guid: e8d61625bc588894fbd570f50c22f018, type: 3}
       propertyPath: minY
-      value: -20
+      value: -41
       objectReference: {fileID: 0}
     - target: {fileID: 9164470183404466324, guid: e8d61625bc588894fbd570f50c22f018, type: 3}
       propertyPath: m_IsActive
@@ -1036,7 +1036,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 123ae750df7fb4a8495738da80ba7c1a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1104,7 +1104,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4438661770944165531, guid: 7b8c939ec27405e4188bf7917a5c7257, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -16.5
       objectReference: {fileID: 0}
     - target: {fileID: 4606535464399046517, guid: 7b8c939ec27405e4188bf7917a5c7257, type: 3}
       propertyPath: m_IsActive
@@ -1112,11 +1112,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7503653922648538913, guid: 7b8c939ec27405e4188bf7917a5c7257, type: 3}
       propertyPath: maxY
-      value: 17
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 7503653922648538913, guid: 7b8c939ec27405e4188bf7917a5c7257, type: 3}
       propertyPath: minY
-      value: -1
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 7931078164844687769, guid: 7b8c939ec27405e4188bf7917a5c7257, type: 3}
       propertyPath: m_Name
@@ -1189,7 +1189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1249,6 +1249,10 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 519420028}
+    - target: {fileID: 4014939192215658556, guid: fdc3753ac1dcc4b4898df700e86f9e97, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -32.81
+      objectReference: {fileID: 0}
     - target: {fileID: 4252370367398698748, guid: fdc3753ac1dcc4b4898df700e86f9e97, type: 3}
       propertyPath: cam
       value: 
@@ -1296,6 +1300,14 @@ PrefabInstance:
     - target: {fileID: 6487664767867481398, guid: fdc3753ac1dcc4b4898df700e86f9e97, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6597670070606469469, guid: fdc3753ac1dcc4b4898df700e86f9e97, type: 3}
+      propertyPath: targetY
+      value: -41
+      objectReference: {fileID: 0}
+    - target: {fileID: 6597670070606469469, guid: fdc3753ac1dcc4b4898df700e86f9e97, type: 3}
+      propertyPath: originalY
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 8201004193978720985, guid: fdc3753ac1dcc4b4898df700e86f9e97, type: 3}
       propertyPath: cam
