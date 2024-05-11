@@ -8,11 +8,15 @@ public class Player : MonoBehaviour
     private InputManager inputManager;
     [SerializeField] GameObject BoatObject; // Boat child object
     [SerializeField] GameObject PlaneObject; // Plane child object
+    //audio
+    [SerializeField] AudioClip transformSound;
+    AudioSource audioSource;
 
     private bool isBoatState = true; // Initial state as boat
     void Start()
     {
         inputManager = FindObjectOfType<InputManager>();
+        audioSource = GetComponent<AudioSource>();
 
         // Subscribe to the events
         if (inputManager != null)
@@ -57,7 +61,10 @@ public class Player : MonoBehaviour
 
     void HandleSpacePress()
     {
-            // Toggle between boat and plane states
+        //play the sound
+        audioSource.clip = transformSound;
+        audioSource.Play();
+        // Toggle between boat and plane states
         if (isBoatState)
         {
             isBoatState = false;
