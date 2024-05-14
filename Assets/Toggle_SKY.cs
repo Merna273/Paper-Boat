@@ -8,7 +8,10 @@ public class Toggle_SKY : MonoBehaviour
     [SerializeField] Sprite afternoonSprite;
     [SerializeField] Sprite nightSprite;
     private DayNight_timer dayNightTimer;
+
     private SpriteRenderer spriteRenderer;
+
+
     private Sprite[] backgrounds;
     private int currentIndex = 0;
     private float transitionSpeed = 1f;

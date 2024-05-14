@@ -12,7 +12,6 @@ public class Player : MonoBehaviour
     [SerializeField] AudioClip transformSound;
     AudioSource audioSource;
 
-    private bool isBoatState = true; // Initial state as boat
     void Start()
     {
         inputManager = FindObjectOfType<InputManager>();
@@ -58,6 +57,7 @@ public class Player : MonoBehaviour
         }
     }
 
+    private bool isBoatState => BoatObject.activeSelf;
 
     void HandleSpacePress()
     {
@@ -67,13 +67,11 @@ public class Player : MonoBehaviour
         // Toggle between boat and plane states
         if (isBoatState)
         {
-            isBoatState = false;
             BoatObject.SetActive(false); // Deactivate the boat
             PlaneObject.SetActive(true); // Activate the plane
         }
         else
         {
-            isBoatState = true;
             PlaneObject.SetActive(false); // Deactivate the plane
             BoatObject.SetActive(true); // Activate the boat
         }

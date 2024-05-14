@@ -38,8 +38,6 @@ public class Plane : MonoBehaviour
         //if plane reached minY position then stop moving at the y-axis
         if (transform.position.y <= axisMovement.getMinY())
         {
-            //Debug.Log("Plane reached minY position");
-            axisMovement.setPlaneFell(true);
 
         }
 

@@ -112,8 +112,6 @@ public class Axis_Movement : MonoBehaviour
     private InputManager inputManager;
 
     private bool isUp = false;
-
-    private bool planeFell = false;
     [SerializeField] float minY = 0f;
     [SerializeField] float maxY = 10f;
 
@@ -162,10 +160,5 @@ public class Axis_Movement : MonoBehaviour
     {
         return minY;
     }
-    public void setPlaneFell(bool value)
-    {
-        planeFell = value;
-    }
-
 }
 

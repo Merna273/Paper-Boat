@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    public delegate void PlayerEvent(int i_health);
+
     public int maxHealth = 5;
     private int currentHealth;
     private HealthBar healthBar;
     [SerializeField] AudioClip deathSound;
     AudioSource audioSource;
-    // Start is called before the first frame update
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -17,9 +19,11 @@ public class PlayerHealth : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
+    public PlayerEvent OnDidUpdateHealth = null;
+
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage;
+        setHealth(currentHealth - damage);
 
         print("Player health: " + currentHealth);
         if (currentHealth <= 0)
@@ -30,21 +34,21 @@ public class PlayerHealth : MonoBehaviour
             audioSource.Play();
             StopGame();
         }
-        else
-        {
-            healthBar.SetHealth(currentHealth);
-        }
     }
 
     public void heal(int healAmount)
     {
-        currentHealth += healAmount;
+        setHealth(currentHealth + healAmount);
+    }
 
-        if (currentHealth > maxHealth)
-        {
-            currentHealth = maxHealth;
-        }
+    void setHealth(int i_newHealth)
+    {
+        i_newHealth = Mathf.Clamp(i_newHealth, 0, maxHealth);
+        if (currentHealth == i_newHealth) return;
+        
+        currentHealth = i_newHealth;
         healthBar.SetHealth(currentHealth);
+        OnDidUpdateHealth?.Invoke(currentHealth);
     }
 
     void StopGame()
@@ -52,9 +56,5 @@ public class PlayerHealth : MonoBehaviour
         // Stop the game by setting timeScale to 0
         Time.timeScale = 0;
     }
-    // Update is called once per frame
-    void Update()
-    {
 
-    }
 }

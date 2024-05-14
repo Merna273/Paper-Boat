@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &9164470183404466324
+--- !u!1 &2401685301262690244
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,43 +8,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2024680280857954439}
-  - component: {fileID: 8541697065382708652}
-  - component: {fileID: 8480327092095467598}
-  - component: {fileID: 1798080173603187123}
-  - component: {fileID: 6767481156752977154}
-  - component: {fileID: 8217073487671868249}
-  - component: {fileID: 1362526994746832241}
-  - component: {fileID: 9660911006779250}
+  - component: {fileID: 2752615269160231412}
+  - component: {fileID: 6687034251896174179}
   m_Layer: 0
-  m_Name: paper_boat
-  m_TagString: Player
+  m_Name: VisualObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2024680280857954439
+--- !u!4 &2752615269160231412
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9164470183404466324}
+  m_GameObject: {fileID: 2401685301262690244}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2024680280857954439}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &8541697065382708652
+--- !u!212 &6687034251896174179
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9164470183404466324}
+  m_GameObject: {fileID: 2401685301262690244}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -90,6 +84,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &9164470183404466324
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2024680280857954439}
+  - component: {fileID: 8480327092095467598}
+  - component: {fileID: 1798080173603187123}
+  - component: {fileID: 6767481156752977154}
+  - component: {fileID: 8217073487671868249}
+  - component: {fileID: 1362526994746832241}
+  - component: {fileID: 9660911006779250}
+  m_Layer: 0
+  m_Name: paper_boat
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2024680280857954439
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9164470183404466324}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2752615269160231412}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8480327092095467598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,6 +218,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 857a0ce82ca80934a8457e07e03821d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 6687034251896174179}
+  playerHealth: {fileID: 0}
 --- !u!50 &9660911006779250
 Rigidbody2D:
   serializedVersion: 4

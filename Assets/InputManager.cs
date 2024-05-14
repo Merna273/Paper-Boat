@@ -12,15 +12,7 @@ public class InputManager : MonoBehaviour
 
     private float verticalInput;
 
-    bool planeFell = false;
-
     [SerializeField] float speed = 5.0f;
-
-    void start()
-    {
-
-    }
-
 
     void Update()
     {
