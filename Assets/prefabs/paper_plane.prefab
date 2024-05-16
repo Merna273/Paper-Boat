@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 685973956209300486}
   - component: {fileID: 6637982935958989830}
   - component: {fileID: 868994197666747196}
+  - component: {fileID: 905369356894697628}
   m_Layer: 0
   m_Name: paper_plane
   m_TagString: Player
@@ -164,6 +165,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 3859487671222403243}
   playerHealth: {fileID: 0}
+--- !u!95 &905369356894697628
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4606535464399046517}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 54d0852cf4c9742618acd49a87341d6a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7515600493897386605
 GameObject:
   m_ObjectHideFlags: 0
