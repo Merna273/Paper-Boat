@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8183119051069322689}
   - component: {fileID: 6131355866818797716}
   - component: {fileID: 4611659653049857920}
+  - component: {fileID: -4513416514068158548}
   m_Layer: 0
   m_Name: night_fish
   m_TagString: Obstacle
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 7
-  m_Sprite: {fileID: 21300000, guid: 70ee62d0cf9d54c4087b45602b9fe27a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cf4f41a0e062549ab94207418103d5cd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -135,7 +136,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 8.639999, y: 11.5199995}
+    oldSize: {x: 40.00889, y: 22.505}
     newSize: {x: 80.01778, y: 45.01}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -144,3 +145,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7.0137577, y: 4.1}
   m_EdgeRadius: 0
+--- !u!95 &-4513416514068158548
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4979264918488003507}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a268065e37863427d8e07b8a4509047e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

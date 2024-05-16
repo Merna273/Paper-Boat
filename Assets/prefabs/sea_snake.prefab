@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 191742588906842945}
   - component: {fileID: 8092141173633367756}
   - component: {fileID: 4795317505376317978}
+  - component: {fileID: 6788707488201004360}
   m_Layer: 0
   m_Name: sea_snake
   m_TagString: Obstacle
@@ -144,3 +145,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 11.958198, y: 2.564727}
   m_EdgeRadius: 0
+--- !u!95 &6788707488201004360
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2228077884689138433}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1c5fd86df00e44fa2b24e45c48324c99, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

@@ -6,6 +6,7 @@ public class ObjectPooling : MonoBehaviour
 {
     [SerializeField] List<GameObject> MorningPrefab;
     [SerializeField] List<GameObject> NightPrefab;
+    [SerializeField] GameObject CoinPrefab;
     [SerializeField] List<AudioClip> MorningAnimalAudioClips; // List of morning animal audio clips
     [SerializeField] List<AudioClip> NightAnimalAudioClips; // List of night animal audio clips
     private AudioSource audioSource;
@@ -41,6 +42,9 @@ public class ObjectPooling : MonoBehaviour
         Debug.Log("Morning Count: " + MorningPool.Count);
         int randomIndex = Random.Range(0, MorningPrefab.Count);
         GameObject newObj = Instantiate(MorningPrefab[randomIndex]);
+        // int animalIndex = NightPrefab.FindIndex(x => x.name == NightPrefab[randomIndex].name);
+        // animator.SetInteger("AnimalNumber", animalIndex + 1);
+        // Debug.Log("Animal Index: " + animalIndex);
         string animalName = MorningPrefab[randomIndex].name; // Extract the name of the prefab's GameObject
         int audioIndex = MorningAnimalAudioClips.FindIndex(x => x.name == animalName); // Find the index of the audio clip based on the prefab's name
         if (audioIndex != -1)
@@ -50,6 +54,7 @@ public class ObjectPooling : MonoBehaviour
         }
         newObj.SetActive(true);
         MorningPool.Add(newObj);
+        getCoin();
         return newObj;
     }
 
@@ -67,6 +72,9 @@ public class ObjectPooling : MonoBehaviour
         Debug.Log("Night Count: " + NightPool.Count);
         int randomIndex = Random.Range(0, NightPrefab.Count);
         GameObject newObj = Instantiate(NightPrefab[randomIndex]);
+        // int animalIndex = NightPrefab.FindIndex(x => x.name == NightPrefab[randomIndex].name);
+        // Debug.Log("Animal Index: " + animalIndex);
+        // animator.SetInteger("AnimalNumber", animalIndex + 1); // Set the integer parameter of the animator (for animation
         string animalName = NightPrefab[randomIndex].name; // Extract the name of the prefab's GameObject
         int audioIndex = NightAnimalAudioClips.FindIndex(x => x.name == animalName); // Find the index of the audio clip based on the prefab's name
         if (audioIndex != -1)
@@ -76,6 +84,14 @@ public class ObjectPooling : MonoBehaviour
         }
         newObj.SetActive(true);
         NightPool.Add(newObj);
+        getCoin();
+        return newObj;
+    }
+
+    public GameObject getCoin()
+    {
+        GameObject newObj = Instantiate(CoinPrefab);
+        newObj.SetActive(true);
         return newObj;
     }
 

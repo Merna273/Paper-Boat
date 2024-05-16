@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9017422942912923621}
   - component: {fileID: 3305715638927393119}
   - component: {fileID: 8986149772646319978}
+  - component: {fileID: -4526538801131654810}
   m_Layer: 0
   m_Name: lobster
   m_TagString: Obstacle
@@ -121,7 +122,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.638894, y: 5.9849997}
+    oldSize: {x: 2.8148203, y: 6.384}
     newSize: {x: 80.01778, y: 45.01}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -130,3 +131,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.011858, y: 5.5572042}
   m_EdgeRadius: 0
+--- !u!95 &-4526538801131654810
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201064165545642361}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d4b6f8bb9c7934e8a8f366b8a7bb891d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

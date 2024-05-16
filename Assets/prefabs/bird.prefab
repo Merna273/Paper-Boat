@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8724222816490722525}
   - component: {fileID: 1864529453477818352}
   - component: {fileID: 4463694803098616801}
+  - component: {fileID: -2653775814557067147}
   m_Layer: 0
   m_Name: bird
   m_TagString: Obstacle
@@ -144,3 +145,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7.719304, y: 5.488039}
   m_EdgeRadius: 0
+--- !u!95 &-2653775814557067147
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5266137109616477615}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5f6d8443c75304ebba3bf03b23c309fd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

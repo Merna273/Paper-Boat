@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6442172662871436915}
   - component: {fileID: 725820368274129004}
   - component: {fileID: 3488009438876822614}
+  - component: {fileID: 4667812542666330380}
   m_Layer: 0
   m_Name: crab
   m_TagString: Obstacle
@@ -144,3 +145,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.9228253, y: 5.277278}
   m_EdgeRadius: 0
+--- !u!95 &4667812542666330380
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2691325191322951053}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b3cd2471511da438ebf2046661fde6a7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
