@@ -6,19 +6,21 @@ public class ObjectPooling : MonoBehaviour
 {
     [SerializeField] List<GameObject> MorningPrefab;
     [SerializeField] List<GameObject> NightPrefab;
-    [SerializeField] GameObject CoinPrefab;
+    [SerializeField] GameObject CoinPrefab = null;
     [SerializeField] List<AudioClip> MorningAnimalAudioClips; // List of morning animal audio clips
     [SerializeField] List<AudioClip> NightAnimalAudioClips; // List of night animal audio clips
     private AudioSource audioSource;
     int poolSize = 5; // Number of objects to keep in the pool
     private List<GameObject> MorningPool; // List of pooled objects
     private List<GameObject> NightPool;
+    private List<GameObject> CoinPool;
 
     void Start()
     {
         // Initialize the pool with inactive instances of the prefab
         MorningPool = new List<GameObject>();
         NightPool = new List<GameObject>();
+        CoinPool = new List<GameObject>();
         audioSource = GetComponent<AudioSource>();
 
         for (int i = 0; i < poolSize; i++)
@@ -34,6 +36,15 @@ public class ObjectPooling : MonoBehaviour
             GameObject obj = Instantiate(NightPrefab[randomIndex]);
             obj.SetActive(false); // Start with inactive objects
             NightPool.Add(obj);
+        }
+        for (int i = 0; i < poolSize; i++)
+        {
+            if (CoinPrefab != null)
+            {
+                GameObject obj = Instantiate(CoinPrefab);
+                obj.SetActive(false); // Start with inactive objects
+                CoinPool.Add(obj);
+            }
         }
     }
 
@@ -54,7 +65,6 @@ public class ObjectPooling : MonoBehaviour
         }
         newObj.SetActive(true);
         MorningPool.Add(newObj);
-        getCoin();
         return newObj;
     }
 
@@ -84,15 +94,33 @@ public class ObjectPooling : MonoBehaviour
         }
         newObj.SetActive(true);
         NightPool.Add(newObj);
-        getCoin();
         return newObj;
     }
 
-    public GameObject getCoin()
+    public GameObject GetObjectFromCoinPool()
     {
-        GameObject newObj = Instantiate(CoinPrefab);
-        newObj.SetActive(true);
-        return newObj;
+
+        if (CoinPrefab == null)
+        {
+            return null;
+        }
+        else{
+
+            GameObject newObj = Instantiate(CoinPrefab);
+
+            //string animalName = MorningPrefab[randomIndex].name; // Extract the name of the prefab's GameObject
+            //int audioIndex = MorningAnimalAudioClips.FindIndex(x => x.name == animalName); // Find the index of the audio clip based on the prefab's name
+            // if (audioIndex != -1)
+            // {
+            //     // Start a coroutine to wait for 2 seconds before playing the sound
+            //     StartCoroutine(PlayDelayedMorningSound(MorningAnimalAudioClips[audioIndex]));
+            // }
+
+            newObj.SetActive(true);
+            CoinPool.Add(newObj);
+            return newObj;
+        }
+
     }
 
     IEnumerator PlayDelayedNightSound(AudioClip clip)

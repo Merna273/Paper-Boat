@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8599619932441907680}
   - component: {fileID: 3220487396416087337}
+  - component: {fileID: 5164664534023302590}
   m_Layer: 0
   m_Name: coin yellow
   m_TagString: Untagged
@@ -84,3 +85,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5164664534023302590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3098881316998706800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d73dd22b4270d14588ba8d4f7118d19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
