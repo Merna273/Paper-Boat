@@ -14,8 +14,8 @@ public class ObstacleSpawning : MonoBehaviour
     float MaxSpawnDistance = 100f; // Distance from the camera
     [SerializeField] float rangeUp;
     [SerializeField] float rangeDown;
-    private int obstaclecount=0;
-    private int coincount=0;
+    private int obstaclecount = 0;
+    private int coincount = 0;
 
     void Start()
     {
@@ -30,54 +30,54 @@ public class ObstacleSpawning : MonoBehaviour
         if (currentIndex != Index)
         {
             currentIndex = Index;
+            float spawnDistance1 = Random.Range(MinSpawnDistance, MaxSpawnDistance);
+            float spawnDistance2 = Random.Range(MinSpawnDistance, MaxSpawnDistance);
 
-            if (obstaclecount <= 3)
+            if (currentIndex == 0 || currentIndex == 3)
             {
-                if (currentIndex == 0 || currentIndex == 3)
-                {
-                    GameObject MorningObstacle = pool.GetObjectFromMorningPool();
-                    MorningObstacle.transform.position = new Vector3(
-                    camera.position.x + Random.Range(MinSpawnDistance, MaxSpawnDistance),
-                    Random.Range(rangeDown, rangeUp),
-                    0
-                );
-                }
-                else if (currentIndex == 1 || currentIndex == 2)
-                {
-                    GameObject NightObstacle = pool.GetObjectFromNightPool();
-                    NightObstacle.transform.position = new Vector3(
-                    camera.position.x + Random.Range(MinSpawnDistance, MaxSpawnDistance),
-                    Random.Range(rangeDown, rangeUp),
-                    0
-                );
-                }
-                obstaclecount++;
+                GameObject MorningObstacle = pool.GetObjectFromMorningPool();
+                MorningObstacle.transform.position = new Vector3(
+                camera.position.x + spawnDistance1,
+                Random.Range(rangeDown, rangeUp),
+                0
+            );
             }
-            else
+            else if (currentIndex == 1 || currentIndex == 2)
             {
-                if ( coincount <= 5)
+                GameObject NightObstacle = pool.GetObjectFromNightPool();
+                NightObstacle.transform.position = new Vector3(
+                camera.position.x + spawnDistance2,
+                Random.Range(rangeDown, rangeUp),
+                0
+            );
+            }
+            if (coincount <= 5)
+            {
+                GameObject Coin = pool.GetObjectFromCoinPool();
+                if (Coin != null)
                 {
-                    GameObject Coin = pool.GetObjectFromCoinPool();
-                    if (Coin != null)
+                    float coinSpawnDistance = Random.Range(MinSpawnDistance, MaxSpawnDistance);
+                    while (Mathf.Abs(coinSpawnDistance - spawnDistance1) < 10 || Mathf.Abs(coinSpawnDistance - spawnDistance2) < 10)
                     {
-                        Coin.transform.position = new Vector3(
-                        camera.position.x + Random.Range(MinSpawnDistance, MaxSpawnDistance),
+                        coinSpawnDistance = Random.Range(MinSpawnDistance, MaxSpawnDistance);
+                    }
+                    Coin.transform.position = new Vector3(
+                        camera.position.x + coinSpawnDistance,
                         Random.Range(rangeDown, rangeUp),
                         0
                     );
-                    }
-                    else 
-                    {
-                        obstaclecount = 0;
-                    }
-                    coincount++;
                 }
                 else
                 {
-                    coincount = 0;
                     obstaclecount = 0;
                 }
-            } 
+                coincount++;
+            }
+            else
+            {
+                coincount = 0;
+                obstaclecount = 0;
+            }
         }
     }
 }

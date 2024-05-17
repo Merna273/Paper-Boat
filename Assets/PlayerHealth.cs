@@ -11,7 +11,6 @@ public class PlayerHealth : MonoBehaviour
     private HealthBar healthBar;
     [SerializeField] AudioClip deathSound;
     AudioSource audioSource;
-
     void Start()
     {
         currentHealth = maxHealth;
@@ -45,7 +44,7 @@ public class PlayerHealth : MonoBehaviour
     {
         i_newHealth = Mathf.Clamp(i_newHealth, 0, maxHealth);
         if (currentHealth == i_newHealth) return;
-        
+
         currentHealth = i_newHealth;
         healthBar.SetHealth(currentHealth);
         OnDidUpdateHealth?.Invoke(currentHealth);

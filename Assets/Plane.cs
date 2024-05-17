@@ -9,8 +9,11 @@ public class Plane : MonoBehaviour
     private Axis_Movement axisMovement; // Reference to the Axis_Movement script
     private bool arrowUpPressed = false; // Flag to check if the up arrow key is pressed
 
+    [SerializeField] int amountOfWaterDamage; // Speed of the plane
+
     // Rigidbody2D component reference
     private Rigidbody2D rb;
+    [SerializeField] PlayerHealth playerHealth;
 
     // Start is called before the first frame update
     void Start()
@@ -38,7 +41,9 @@ public class Plane : MonoBehaviour
         //if plane reached minY position then stop moving at the y-axis
         if (transform.position.y <= axisMovement.getMinY())
         {
-
+            //make player lose 
+            playerHealth.TakeDamage(amountOfWaterDamage);
+            gameObject.SetActive(false);
         }
 
         print("Plane Update");

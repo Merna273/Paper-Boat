@@ -10,6 +10,14 @@ public class CollisionHandler : MonoBehaviour
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] PlayerHealth playerHealth;
 
+    [SerializeField] AudioClip coinAudioClip;
+    AudioSource audioSource;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -23,12 +31,16 @@ public class CollisionHandler : MonoBehaviour
         else if (collision.gameObject.tag == "Collectible")
         {
             // do positive stuff
+            //make the gameObject disappear
+            collision.gameObject.SetActive(false);
+            audioSource.PlayOneShot(coinAudioClip);
+            playerHealth.heal(1);
         }
     }
 
-    private IEnumerator flashPlayer( )
+    private IEnumerator flashPlayer()
     {
-        
+
         for (int i = 0; i < flashCount; i++)
         {
             // Make the player object disappear and reappear
