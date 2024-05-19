@@ -8,6 +8,7 @@ public class MainMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //make sure music is playing with the volume of the player pereference
 
     }
 
@@ -20,5 +21,13 @@ public class MainMenu : MonoBehaviour
     {
         // Time.timeScale = 1;
         SceneManager.LoadScene("MainScene");
+    }
+    public void Settings()
+    {
+        SceneManager.LoadScene("Settings");
+    }
+    public void Instructions()
+    {
+        SceneManager.LoadScene("Instructions");
     }
 }

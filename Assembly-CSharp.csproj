@@ -84,7 +84,9 @@
     <Compile Include="Assets/Sun_Moon.cs" />
     <Compile Include="Assets/PlayerHealth.cs" />
     <Compile Include="Assets/Coin.cs" />
+    <Compile Include="Assets/goBack.cs" />
     <Compile Include="Assets/Toggle_SKY.cs" />
+    <Compile Include="Assets/MusicVolume.cs" />
     <Compile Include="Assets/MainMenu.cs" />
   </ItemGroup>
   <ItemGroup>
