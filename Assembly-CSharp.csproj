@@ -75,14 +75,17 @@
     <Compile Include="Assets/Parallax.cs" />
     <Compile Include="Assets/CameraController.cs" />
     <Compile Include="Assets/HealthBar.cs" />
+    <Compile Include="Assets/RestartGame.cs" />
     <Compile Include="Assets/Boat.cs" />
     <Compile Include="Assets/Crossfade.cs" />
+    <Compile Include="Assets/DoNotDestroy.cs" />
     <Compile Include="Assets/WaveMovement.cs" />
     <Compile Include="Assets/ObstacleSpawning.cs" />
     <Compile Include="Assets/Sun_Moon.cs" />
     <Compile Include="Assets/PlayerHealth.cs" />
     <Compile Include="Assets/Coin.cs" />
     <Compile Include="Assets/Toggle_SKY.cs" />
+    <Compile Include="Assets/MainMenu.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

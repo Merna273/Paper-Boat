@@ -34,7 +34,8 @@ public class CollisionHandler : MonoBehaviour
             //make the gameObject disappear
             collision.gameObject.SetActive(false);
             audioSource.PlayOneShot(coinAudioClip);
-            playerHealth.heal(1);
+            ///ADJUST SCORE///
+            //playerHealth.heal(1);
         }
     }
 

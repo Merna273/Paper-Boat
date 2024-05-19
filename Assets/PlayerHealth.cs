@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -9,13 +10,11 @@ public class PlayerHealth : MonoBehaviour
     public int maxHealth = 5;
     private int currentHealth;
     private HealthBar healthBar;
-    [SerializeField] AudioClip deathSound;
-    AudioSource audioSource;
+
     void Start()
     {
         currentHealth = maxHealth;
         healthBar = FindObjectOfType<HealthBar>();
-        audioSource = GetComponent<AudioSource>();
     }
 
     public PlayerEvent OnDidUpdateHealth = null;
@@ -28,9 +27,6 @@ public class PlayerHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             Debug.Log("Player is dead!");
-            //play audio
-            audioSource.clip = deathSound;
-            audioSource.Play();
             StopGame();
         }
     }
@@ -53,7 +49,8 @@ public class PlayerHealth : MonoBehaviour
     void StopGame()
     {
         // Stop the game by setting timeScale to 0
-        Time.timeScale = 0;
+        // Time.timeScale = 0;
+        SceneManager.LoadScene("LosingScene");
     }
 
 }
