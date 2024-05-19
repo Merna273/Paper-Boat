@@ -32,7 +32,7 @@ public class MusicVolume : MonoBehaviour
         Save();
     }
 
-    void Load()
+    public void Load()
     {
         slider.value = PlayerPrefs.GetFloat("volume");
     }

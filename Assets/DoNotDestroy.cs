@@ -29,5 +29,7 @@ public class DoNotDestroy : MonoBehaviour
                 audioSource.Stop();
             }
         }
+        //get audio volume from player prefs and set it
+        AudioListener.volume = PlayerPrefs.GetFloat("volume");
     }
 }

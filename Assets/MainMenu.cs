@@ -8,8 +8,6 @@ public class MainMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //make sure music is playing with the volume of the player pereference
-
     }
 
     // Update is called once per frame
