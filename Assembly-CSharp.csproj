@@ -72,7 +72,10 @@
     <Compile Include="Assets\InputManager.cs" />
     <Compile Include="Assets\ObjectPooling.cs" />
     <Compile Include="Assets\Axis_Movement.cs" />
+<<<<<<< Updated upstream
     <Compile Include="Assets\ScoreText.cs" />
+=======
+>>>>>>> Stashed changes
     <Compile Include="Assets\CollisionHandler.cs" />
     <Compile Include="Assets\Parallax.cs" />
     <Compile Include="Assets\CameraController.cs" />
@@ -82,17 +85,25 @@
     <Compile Include="Assets\Crossfade.cs" />
     <Compile Include="Assets\DoNotDestroy.cs" />
     <Compile Include="Assets\WaveMovement.cs" />
+<<<<<<< Updated upstream
     <Compile Include="Assets\PlayerScore.cs" />
+=======
+>>>>>>> Stashed changes
     <Compile Include="Assets\ObstacleSpawning.cs" />
     <Compile Include="Assets\Sun_Moon.cs" />
     <Compile Include="Assets\PlayerHealth.cs" />
     <Compile Include="Assets\Coin.cs" />
+<<<<<<< Updated upstream
     <Compile Include="Assets\FinalScore.cs" />
     <Compile Include="Assets\goBack.cs" />
     <Compile Include="Assets\Toggle_SKY.cs" />
     <Compile Include="Assets\MusicVolume.cs" />
     <Compile Include="Assets\MainMenu.cs" />
     <Compile Include="Assets\HighScore.cs" />
+=======
+    <Compile Include="Assets\Toggle_SKY.cs" />
+    <Compile Include="Assets\MainMenu.cs" />
+>>>>>>> Stashed changes
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
