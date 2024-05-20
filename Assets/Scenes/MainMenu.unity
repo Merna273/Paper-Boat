@@ -284,6 +284,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: lobster
       objectReference: {fileID: 0}
+    - target: {fileID: 2220428989876048570, guid: 4acced83f01a95a49b4730d52cb5a839, type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2220428989876048570, guid: 4acced83f01a95a49b4730d52cb5a839, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9017422942912923621, guid: 4acced83f01a95a49b4730d52cb5a839, type: 3}
       propertyPath: m_LocalPosition.x
       value: -32.4
@@ -326,6 +334,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -1520027534439003787, guid: 4acced83f01a95a49b4730d52cb5a839, type: 3}
+    - {fileID: 2220428989876048570, guid: 4acced83f01a95a49b4730d52cb5a839, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -525,6 +534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aef5b04ad705e3744b7be12bd92b73b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreText: {fileID: 1411327497}
 --- !u!1 &385911290
 GameObject:
   m_ObjectHideFlags: 0
