@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
     public delegate void PlayerEvent(int i_health);
-
+    public PlayerScore playerScore;
     public int maxHealth = 5;
     private int currentHealth;
     private HealthBar healthBar;
@@ -49,8 +49,11 @@ public class PlayerHealth : MonoBehaviour
     void StopGame()
     {
         // Stop the game by setting timeScale to 0
-        // Time.timeScale = 0;
+        print (playerScore.getScore());
+        PlayerPrefs.SetInt("Score", playerScore.getScore());
+        PlayerPrefs.Save();
         SceneManager.LoadScene("LosingScene");
     }
+
 
 }

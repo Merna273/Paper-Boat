@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1682747096063240108}
   - component: {fileID: 4978321624184925026}
   - component: {fileID: 9106400981562676361}
+  - component: {fileID: 5194278894176473546}
   m_Layer: 0
   m_Name: thunder
   m_TagString: Obstacle
@@ -166,3 +167,63 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!68 &5194278894176473546
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4308033195432813071}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.37351996, y: 0.30292404}
+  - {x: -1.9166987, y: 0.299568}
+  - {x: -2.1863096, y: 0.28958228}
+  - {x: -2.383775, y: 0.27992}
+  - {x: -3.6387424, y: 1.460698}
+  - {x: -3.2899566, y: 3.2513433}
+  - {x: -1.640327, y: 4.772003}
+  - {x: -0.029746175, y: 4.5979404}
+  - {x: 1.7040247, y: 2.7980227}
+  - {x: 2.6605349, y: 2.9328442}
+  - {x: 3.7385087, y: 1.9656336}
+  - {x: 2.9088595, y: 0.24138534}
+  - {x: 0.8795754, y: 0.29472995}
+  - {x: 0.50134337, y: -0.34235078}
+  - {x: 0.5846328, y: -0.661772}
+  - {x: 0.5846328, y: -0.661772}
+  - {x: 0.76051044, y: -2.508583}
+  - {x: -1.654031, y: -4.751126}
+  - {x: -0.4253708, y: -2.0829656}
+  - {x: -0.9280722, y: -0.13602886}
+  - {x: -0.36007047, y: 0.3015523}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0

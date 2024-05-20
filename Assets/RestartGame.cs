@@ -17,6 +17,7 @@ public class RestartGame : MonoBehaviour
     public void LoadGame()
     {
         // Time.timeScale = 1;
+        
         SceneManager.LoadScene("MainScene");
     }
     public void QuitGame()

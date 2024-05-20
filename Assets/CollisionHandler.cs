@@ -9,6 +9,7 @@ public class CollisionHandler : MonoBehaviour
 
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] PlayerHealth playerHealth;
+    [SerializeField] PlayerScore PlayerScore;
 
     [SerializeField] AudioClip coinAudioClip;
     AudioSource audioSource;
@@ -34,8 +35,7 @@ public class CollisionHandler : MonoBehaviour
             //make the gameObject disappear
             collision.gameObject.SetActive(false);
             audioSource.PlayOneShot(coinAudioClip);
-            ///ADJUST SCORE///
-            //playerHealth.heal(1);
+            PlayerScore.AddScore(5);
         }
     }
 
