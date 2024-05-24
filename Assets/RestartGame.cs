@@ -17,12 +17,12 @@ public class RestartGame : MonoBehaviour
     public void LoadGame()
     {
         // Time.timeScale = 1;
-        
+
         SceneManager.LoadScene("MainScene");
     }
     public void QuitGame()
     {
-        // Time.timeScale = 1;
-        SceneManager.LoadScene("MainMenu");
+        //quit the game
+        Application.Quit();
     }
 }
