@@ -7,6 +7,7 @@ public class ObjectPooling : MonoBehaviour
     [SerializeField] List<GameObject> MorningPrefab;
     [SerializeField] List<GameObject> NightPrefab;
     [SerializeField] GameObject CoinPrefab = null;
+    [SerializeField] GameObject LivesPrefab = null;
     [SerializeField] List<AudioClip> MorningAnimalAudioClips; // List of morning animal audio clips
     [SerializeField] List<AudioClip> NightAnimalAudioClips; // List of night animal audio clips
 
@@ -16,6 +17,7 @@ public class ObjectPooling : MonoBehaviour
     private List<GameObject> MorningPool; // List of pooled objects
     private List<GameObject> NightPool;
     private List<GameObject> CoinPool;
+    private List<GameObject> LivesPool;
 
     void Start()
     {
@@ -23,6 +25,7 @@ public class ObjectPooling : MonoBehaviour
         MorningPool = new List<GameObject>();
         NightPool = new List<GameObject>();
         CoinPool = new List<GameObject>();
+        LivesPool = new List<GameObject>();
         audioSource = GetComponent<AudioSource>();
 
         for (int i = 0; i < poolSize; i++)
@@ -112,6 +115,23 @@ public class ObjectPooling : MonoBehaviour
             GameObject newObj = Instantiate(CoinPrefab);
             newObj.SetActive(true);
             CoinPool.Add(newObj);
+            return newObj;
+        }
+
+    }
+    public GameObject GetObjectFromLivesPool()
+    {
+
+        if (LivesPrefab == null)
+        {
+            return null;
+        }
+        else
+        {
+
+            GameObject newObj = Instantiate(LivesPrefab);
+            newObj.SetActive(true);
+            LivesPool.Add(newObj);
             return newObj;
         }
 

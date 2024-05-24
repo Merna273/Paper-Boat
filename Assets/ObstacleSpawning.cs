@@ -19,6 +19,7 @@ public class ObstacleSpawning : MonoBehaviour
     [SerializeField] float Obs_spawnInterval = 5f; // Time interval between spawns
     [SerializeField] float Coin_spawnInterval = 5f; // Time interval between spawns
     private float timer;
+    private int dayNightCycleCount = 0;
 
     void Start()
     {
@@ -40,14 +41,21 @@ public class ObstacleSpawning : MonoBehaviour
             {
                 SpawnObstacle();
             }
-            else{
+            else
+            {
                 SpawnCoin();
+            }
+
+            // Debug.Log("Day and night cycle count: " + dayNightCycleCount);
+            if (dayNightCycleCount >= 2)
+            {
+                SpawnLives();
+                dayNightCycleCount = 0; // Reset the count
             }
         }
 
-        
-    }
 
+    }
 
     bool ShouldSpawnObstacle()
     {
@@ -66,34 +74,36 @@ public class ObstacleSpawning : MonoBehaviour
         float cameraX = camera.position.x;
         float spawnXPosition = cameraX + Random.Range(MinSpawnDistance, MaxSpawnDistance);
         if (currentIndex == 0 || currentIndex == 3)
+        {
+            GameObject MorningObstacle = pool.GetObjectFromMorningPool();
+            if (MorningObstacle != null)
             {
-                GameObject MorningObstacle = pool.GetObjectFromMorningPool();
-                if (MorningObstacle != null)
-                {
-                    MorningObstacle.transform.position = new Vector3(
-                    spawnXPosition,
-                    Random.Range(rangeDown, rangeUp),
-                    0
-                );
-                }
-                obstaclecount++;
-                timer = Obs_spawnInterval;
+                MorningObstacle.transform.position = new Vector3(
+                spawnXPosition,
+                Random.Range(rangeDown, rangeUp),
+                0
+            );
             }
-            else if (currentIndex == 1 || currentIndex == 2)
+            obstaclecount++;
+            timer = Obs_spawnInterval;
+        }
+        else if (currentIndex == 1 || currentIndex == 2)
+        {
+            dayNightCycleCount++;
+
+            GameObject NightObstacle = pool.GetObjectFromNightPool();
+            if (NightObstacle != null)
             {
-                GameObject NightObstacle = pool.GetObjectFromNightPool();
-                if (NightObstacle != null)
-                {
-                    NightObstacle.transform.position = new Vector3(
-                    spawnXPosition,
-                    Random.Range(rangeDown, rangeUp),
-                    0
-                );
-                }
-                obstaclecount++;
-                timer = Obs_spawnInterval;
+                NightObstacle.transform.position = new Vector3(
+                spawnXPosition,
+                Random.Range(rangeDown, rangeUp),
+                0
+            );
             }
-            
+            obstaclecount++;
+            timer = Obs_spawnInterval;
+        }
+
     }
 
     void SpawnCoin()
@@ -124,6 +134,20 @@ public class ObstacleSpawning : MonoBehaviour
             coincount = 0;
             obstaclecount = 0;
             timer = Obs_spawnInterval;
+        }
+    }
+    void SpawnLives()
+    {
+        float cameraX = camera.position.x;
+        float spawnXPosition = cameraX + MaxSpawnDistance;
+        GameObject Lives = pool.GetObjectFromLivesPool();
+        if (Lives != null)
+        {
+            Lives.transform.position = new Vector3(
+                spawnXPosition,
+                Random.Range(rangeDown, rangeUp),
+                0
+            );
         }
     }
 }

@@ -25,6 +25,10 @@ public class PlayerScore : MonoBehaviour
     {
         setScore(currentScore + score);
     }
+    public void SubtractScore(int score)
+    {
+        setScore(currentScore - score);
+    }
 
     void setScore(int i_newScore)
     {
