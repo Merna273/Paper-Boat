@@ -54,19 +54,19 @@ public class CollisionHandler : MonoBehaviour
         }
         else if (collision.gameObject.tag == "Lives")
         {
-            // if in the morning, player gains 2 health
+            // if in the morning, player gains 1 health
             if (currentIndex == 0 || currentIndex == 1)
             {
                 collision.gameObject.SetActive(false);
                 audioSource.PlayOneShot(LivesAudioClip);
-                playerHealth.heal(2);
+                playerHealth.heal(1);
             }
             else if (currentIndex == 2 || currentIndex == 3)
             {
-                //if in the night, player gains 1 health
+                //if in the night, player gains 2 health
                 collision.gameObject.SetActive(false);
                 audioSource.PlayOneShot(coinAudioClip);
-                playerHealth.heal(1);
+                playerHealth.heal(2);
             }
         }
     }
