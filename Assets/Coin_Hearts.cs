@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Coin : MonoBehaviour
+public class Coin_Hearts : MonoBehaviour
 {
     public float speed = 5f; // Speed of the obstacle
     private ObjectPooling pool; // Reference to the object pool

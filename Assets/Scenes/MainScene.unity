@@ -326,7 +326,7 @@ MonoBehaviour:
   - {fileID: 4308033195432813071, guid: 85780e15a26d440a6a6483f6694e5850, type: 3}
   - {fileID: 8759029074187901502, guid: 5ea5548e14984e9439ee106640dc9a59, type: 3}
   CoinPrefab: {fileID: 0}
-  LivesPrefab: {fileID: 2345379365987522967, guid: c5d8e690d8ea8472b94ded942eda93f3, type: 3}
+  LivesPrefab: {fileID: 0}
   MorningAnimalAudioClips:
   - {fileID: 8300000, guid: ebc97580fca3e472291ddaa888484a8c, type: 3}
   - {fileID: 8300000, guid: 056ff00108e0a4fa1845808143d1d7aa, type: 3}
@@ -657,7 +657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 553df9d721b0a09498a861f366d38289, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toggleInterval: 5
+  toggleInterval: 30
 --- !u!1 &559447858
 GameObject:
   m_ObjectHideFlags: 0
@@ -725,6 +725,7 @@ MonoBehaviour:
   BoatObject: {fileID: 2138804621}
   PlaneObject: {fileID: 1021359409}
   transformSound: {fileID: 8300000, guid: a64648f34062046dba3160a8aa56dda7, type: 3}
+  PlayerScore: {fileID: 559447866}
 --- !u!114 &559447864
 MonoBehaviour:
   m_ObjectHideFlags: 0

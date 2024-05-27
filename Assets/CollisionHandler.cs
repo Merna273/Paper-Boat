@@ -35,14 +35,15 @@ public class CollisionHandler : MonoBehaviour
             {
                 StartCoroutine(flashPlayer());
                 print("collided with Obstacle");
-                PlayerScore.SubtractScore(10);
+                // PlayerScore.SubtractScore(10);
+                playerHealth.TakeDamage(1);
             }
             else if (currentIndex == 2 || currentIndex == 3)
             {
                 //if night, player looses 1 from health
                 StartCoroutine(flashPlayer());
                 print("collided with Obstacle");
-                playerHealth.TakeDamage(1);
+                playerHealth.TakeDamage(2);
             }
         }
         else if (collision.gameObject.tag == "Collectible")
@@ -50,7 +51,7 @@ public class CollisionHandler : MonoBehaviour
             //make the gameObject disappear
             collision.gameObject.SetActive(false);
             audioSource.PlayOneShot(coinAudioClip);
-            PlayerScore.AddScore(5);
+            PlayerScore.AddScore(20);
         }
         else if (collision.gameObject.tag == "Lives")
         {

@@ -11,11 +11,13 @@ public class Player : MonoBehaviour
     //audio
     [SerializeField] AudioClip transformSound;
     AudioSource audioSource;
-
+    [SerializeField] PlayerScore PlayerScore;
+    private float timer;
     void Start()
     {
         inputManager = FindObjectOfType<InputManager>();
         audioSource = GetComponent<AudioSource>();
+        
 
         // Subscribe to the events
         if (inputManager != null)
@@ -26,12 +28,19 @@ public class Player : MonoBehaviour
         // Ensure the boat is active initially and the plane is inactive
         BoatObject.SetActive(true);
         PlaneObject.SetActive(false);
+        timer = 1f; // Initialize the timer
     }
 
     // Update is called once per frame
     void Update()
     {
         Moveobject();
+         timer -= Time.deltaTime; // Update the timer
+        if (timer <= 0f)
+        {
+            PlayerScore.AddScore(1);
+            timer = 1f; // Reset the timer
+        }
     }
     void Moveobject()
     {

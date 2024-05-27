@@ -59,7 +59,7 @@
     <UnityVersion>2022.3.20f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Users\hp\.vscode\extensions\visualstudiotoolsforunity.vstuc-1.0.1\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="C:\Users\hp\.vscode\extensions\visualstudiotoolsforunity.vstuc-1.0.2\Analyzers\Microsoft.Unity.Analyzers.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.20f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.20f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
@@ -73,6 +73,7 @@
     <Compile Include="Assets\ObjectPooling.cs" />
     <Compile Include="Assets\Axis_Movement.cs" />
     <Compile Include="Assets\ScoreText.cs" />
+    <Compile Include="Assets\Coin_Hearts.cs" />
     <Compile Include="Assets\CollisionHandler.cs" />
     <Compile Include="Assets\Parallax.cs" />
     <Compile Include="Assets\CameraController.cs" />
@@ -86,7 +87,6 @@
     <Compile Include="Assets\ObstacleSpawning.cs" />
     <Compile Include="Assets\Sun_Moon.cs" />
     <Compile Include="Assets\PlayerHealth.cs" />
-    <Compile Include="Assets\Coin.cs" />
     <Compile Include="Assets\FinalScore.cs" />
     <Compile Include="Assets\goBack.cs" />
     <Compile Include="Assets\Toggle_SKY.cs" />

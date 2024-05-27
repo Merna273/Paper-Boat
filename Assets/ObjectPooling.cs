@@ -51,6 +51,15 @@ public class ObjectPooling : MonoBehaviour
                 CoinPool.Add(obj);
             }
         }
+        for (int i = 0; i < poolSize; i++)
+        {
+            if (LivesPrefab != null)
+            {
+                GameObject obj = Instantiate(LivesPrefab);
+                obj.SetActive(false); // Start with inactive objects
+                CoinPool.Add(obj);
+            }
+        }
     }
 
     public GameObject GetObjectFromMorningPool()
