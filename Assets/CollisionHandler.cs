@@ -66,7 +66,7 @@ public class CollisionHandler : MonoBehaviour
             {
                 //if in the night, player gains 2 health
                 collision.gameObject.SetActive(false);
-                audioSource.PlayOneShot(coinAudioClip);
+                audioSource.PlayOneShot(LivesAudioClip);
                 playerHealth.heal(2);
             }
         }
