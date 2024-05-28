@@ -30,6 +30,13 @@ public class DoNotDestroy : MonoBehaviour
         //     }
         // }
         //get audio volume from player prefs and set it
-        AudioListener.volume = PlayerPrefs.GetFloat("volume");
+        if (PlayerPrefs.HasKey("volume"))
+        {
+            AudioListener.volume = PlayerPrefs.GetFloat("volume");
+        }
+        else
+        {
+            AudioListener.volume = 1;
+        }
     }
 }
