@@ -84,6 +84,7 @@
     <Compile Include="Assets\DoNotDestroy.cs" />
     <Compile Include="Assets\WaveMovement.cs" />
     <Compile Include="Assets\PlayerScore.cs" />
+    <Compile Include="Assets\SceneSpecify.cs" />
     <Compile Include="Assets\ObstacleSpawning.cs" />
     <Compile Include="Assets\Sun_Moon.cs" />
     <Compile Include="Assets\PlayerHealth.cs" />

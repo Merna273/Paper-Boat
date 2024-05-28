@@ -20,6 +20,14 @@ public class goBack : MonoBehaviour
     public void goBackToMainMenu()
     {
         // Time.timeScale = 1;
-        SceneManager.LoadScene("MainMenu");
+        int back = PlayerPrefs.GetInt("Back");
+        if (back == 1)
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
+        else if (back == 2)
+        {
+            SceneManager.LoadScene("LosingScene");
+        }
     }
 }
