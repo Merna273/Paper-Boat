@@ -32,6 +32,8 @@ public class Player : MonoBehaviour
         BoatObject.SetActive(true);
         PlaneObject.SetActive(false);
         timer = 1f; // Initialize the timer
+        PlayerPrefs.SetInt("playerLost", 0);
+        PlayerPrefs.Save();
     }
 
     // Update is called once per frame
