@@ -13,6 +13,9 @@ public class Player : MonoBehaviour
     AudioSource audioSource;
     [SerializeField] PlayerScore PlayerScore;
     private float timer;
+
+    [SerializeField] Animator animator_boat;
+    [SerializeField] Animator animator_plane;
     void Start()
     {
         inputManager = FindObjectOfType<InputManager>();
@@ -76,11 +79,13 @@ public class Player : MonoBehaviour
         // Toggle between boat and plane states
         if (isBoatState)
         {
+            // animator_boat.SetBool("TO_Plane", true);
             BoatObject.SetActive(false); // Deactivate the boat
             PlaneObject.SetActive(true); // Activate the plane
         }
         else
         {
+            // animator_plane.SetBool("TO_Boat", true);
             PlaneObject.SetActive(false); // Deactivate the plane
             BoatObject.SetActive(true); // Activate the boat
         }

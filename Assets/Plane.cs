@@ -46,11 +46,11 @@ public class Plane : MonoBehaviour
             gameObject.SetActive(false);
         }
 
-        print("Plane Update");
-        print("axisMovement.getIsUp() = " + axisMovement.getIsUp());
-        print("axisMovement.getMinY() = " + axisMovement.getMinY());
-        print("transform.position.y = " + transform.position.y);
-        print("arrowUpPressed = " + arrowUpPressed);
+        // print("Plane Update");
+        // print("axisMovement.getIsUp() = " + axisMovement.getIsUp());
+        // print("axisMovement.getMinY() = " + axisMovement.getMinY());
+        // print("transform.position.y = " + transform.position.y);
+        // print("arrowUpPressed = " + arrowUpPressed);
     }
 
     void FixedUpdate()

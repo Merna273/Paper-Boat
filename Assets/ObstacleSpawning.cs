@@ -140,7 +140,7 @@ public class ObstacleSpawning : MonoBehaviour
             coincount = 0;
             obstaclecount = 0;
             obstacle_countMAX = Random.Range(2, 4);
-            timer = Obs_spawnInterval;
+            timer = Coin_spawnInterval;
         }
     }
 
@@ -158,7 +158,7 @@ public class ObstacleSpawning : MonoBehaviour
                 0
             );
         
-            timer = Obs_spawnInterval;
+            timer = Coin_spawnInterval;
         }
         
     }
